@@ -1,0 +1,23 @@
+{
+  "name": "niche2zillow",
+  "action": {
+  },
+  "manifest_version": 3,
+  "version": "0.1",
+  "description": "Link from Niche to Zillow",
+  "permissions": [
+    "scripting"
+  ],
+   "content_scripts": [
+    {
+      "matches": ["https://*.niche.com/places-to-live/*"],
+      "exclude_matches": [
+        "https://*.niche.com/places-to-live/search/*"],
+      "js": ["jquery-3.6.0.min.js", "locality-content-script.js"]
+    },
+    {
+      "matches": ["https://*.niche.com/places-to-live/search/*"],
+      "js": ["jquery-3.6.0.min.js", "search-content-script.js"]
+    }
+   ]
+}
